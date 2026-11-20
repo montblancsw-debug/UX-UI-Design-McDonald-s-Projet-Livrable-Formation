@@ -1,0 +1,24 @@
+<!-- Pictogrammes : Font Awesome Free 6 Solid, Fonticons Inc., CC BY 4.0, https://fontawesome.com/license/free ; tailles et couleurs adaptées dans les maquettes. Typographie : Noto Sans, The Noto Project Authors, SIL OFL 1.1. -->
+<svg width="328" height="96" viewBox="0 0 328 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="326" height="94" rx="23" fill="white"/>
+<rect x="1" y="1" width="326" height="94" rx="23" stroke="#DDD2C0" stroke-width="2"/>
+<rect x="1" y="1" width="94" height="94" rx="15" fill="#F0F0F0"/>
+<rect x="1" y="1" width="94" height="94" rx="15" stroke="#DDD2C0" stroke-width="2"/>
+<g clip-path="url(#clip0_3_321)">
+<path d="M58.8334 47.9997C58.8334 48.9215 58.0886 49.6663 57.1667 49.6663H38.8334C37.9115 49.6663 37.1667 48.9215 37.1667 47.9997C37.1667 47.0778 37.9115 46.333 38.8334 46.333H57.1667C58.0886 46.333 58.8334 47.0778 58.8334 47.9997Z" fill="#234B36"/>
+</g>
+<rect x="233" y="1" width="94" height="94" rx="15" fill="#F0F0F0"/>
+<rect x="233" y="1" width="94" height="94" rx="15" stroke="#DDD2C0" stroke-width="2"/>
+<g clip-path="url(#clip1_3_321)">
+<path d="M281.667 38.8332C281.667 37.9113 280.922 37.1665 280 37.1665C279.078 37.1665 278.333 37.9113 278.333 38.8332V46.3332H270.833C269.911 46.3332 269.167 47.078 269.167 47.9998C269.167 48.9217 269.911 49.6665 270.833 49.6665H278.333V57.1665C278.333 58.0884 279.078 58.8332 280 58.8332C280.922 58.8332 281.667 58.0884 281.667 57.1665V49.6665H289.167C290.089 49.6665 290.833 48.9217 290.833 47.9998C290.833 47.078 290.089 46.3332 289.167 46.3332H281.667V38.8332Z" fill="#234B36"/>
+</g>
+<path d="M165.653 52H163.589V40.024C163.589 39.336 163.597 38.784 163.613 38.368C163.629 37.952 163.653 37.52 163.685 37.072C163.429 37.328 163.197 37.544 162.989 37.72C162.781 37.896 162.517 38.12 162.197 38.392L160.373 39.88L159.269 38.464L163.901 34.864H165.653V52Z" fill="#594E45"/>
+<defs>
+<clipPath id="clip0_3_321">
+<rect width="32" height="32" fill="white" transform="translate(32 32)"/>
+</clipPath>
+<clipPath id="clip1_3_321">
+<rect width="32" height="32" fill="white" transform="translate(264 32)"/>
+</clipPath>
+</defs>
+</svg>

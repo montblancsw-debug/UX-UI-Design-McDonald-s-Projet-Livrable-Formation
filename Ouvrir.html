@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>McDonald's</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fff7e7;
+            color: #241e18;
+            font-family: "Noto Sans", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid #da291c;
+            outline-offset: 5px;
+        }
+
+        header {
+            border-bottom: 1px solid #ddd2c0;
+        }
+
+        .wrap {
+            max-width: 1240px;
+            margin: auto;
+            padding: 0 32px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 32px 0 25px;
+        }
+
+        .mark {
+            flex-shrink: 0;
+            width: 12px;
+            height: 65px;
+            border-radius: 6px;
+            background: #ffc72c;
+        }
+
+        h1 {
+            margin: 0;
+            color: #234b36;
+            font-size: 34px;
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 0 18px;
+        }
+
+        nav a {
+            padding: 11px 19px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: #234b36;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav a[aria-selected="true"] {
+            background: #234b36;
+            color: #fff;
+        }
+
+        nav a:hover:not([aria-selected="true"]) {
+            border-color: #234b36;
+        }
+
+        main {
+            padding-top: 26px !important;
+            padding-bottom: 26px !important;
+        }
+
+        .panel[hidden] {
+            display: none;
+        }
+
+        h2 {
+            margin: 0 0 21px;
+            color: #234b36;
+            font-size: 28px;
+            line-height: 1.25;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            min-height: 152px;
+            padding: 21px;
+            border: 1px solid #ddd2c0;
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #234b36;
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .card .button {
+            margin-top: auto;
+        }
+
+        .featured {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 18px;
+            padding: 20px 24px;
+            border-radius: 15px;
+            background: #234b36;
+            color: #fff;
+        }
+
+        .featured h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .featured .button {
+            min-width: 210px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 47px;
+            padding: 12px 15px;
+            border: 1px solid #234b36;
+            border-radius: 9px;
+            background: #fff;
+            color: #234b36;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-decoration: none;
+        }
+
+        .button span {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .button:hover {
+            background: #eff3ee;
+        }
+
+        .button.primary {
+            border-color: #ffc72c;
+            background: #ffc72c;
+            color: #241e18;
+        }
+
+        .button.primary:hover {
+            background: #f0b900;
+        }
+
+        .large {
+            min-height: 190px;
+            padding: 30px;
+        }
+
+        .wide {
+            max-width: 900px;
+        }
+
+        .pdf-access {
+            margin-top: 20px;
+        }
+
+        footer {
+            padding: 16px 0;
+            border-top: 1px solid #ddd2c0;
+            color: #625a52;
+            font-size: 12px;
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        footer a {
+            text-underline-offset: 3px;
+        }
+
+        @media (min-width: 1500px) {
+            .wrap {
+                max-width: 1320px;
+            }
+
+            .brand {
+                padding-top: 40px;
+                padding-bottom: 32px;
+            }
+
+            main {
+                padding-top: 32px !important;
+            }
+        }
+
+        @media (max-width: 950px) {
+            h1 {
+                font-size: 29px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .featured {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .featured .button {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .wrap {
+                padding-right: 22px;
+                padding-left: 22px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            nav a {
+                padding: 9px 12px;
+            }
+
+            .brand {
+                padding-top: 24px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            footer .wrap {
+                display: block;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="brand">
+                <span class="mark" aria-hidden="true"></span>
+                <h1>McDonald's</h1>
+            </div>
+            <nav role="tablist" aria-label="Rubriques">
+                <a role="tab" id="tab-documents" href="#documents" aria-controls="documents" aria-selected="true">Documents</a>
+                <a role="tab" id="tab-questionnaire" href="#questionnaire" aria-controls="questionnaire" aria-selected="false">Questionnaire</a>
+                <a role="tab" id="tab-wireframes" href="#wireframes" aria-controls="wireframes" aria-selected="false">Wireframes</a>
+                <a role="tab" id="tab-maquette" href="#maquette" aria-controls="maquette" aria-selected="false">Maquette</a>
+                <a role="tab" id="tab-borne" href="#borne" aria-controls="borne" aria-selected="false">Borne de commande</a>
+            </nav>
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="panel" id="documents" role="tabpanel" aria-labelledby="tab-documents">
+            <h2>Documents</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Benchmark</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Benchmark.pdf#view=Fit" target="_blank" rel="noopener">Consulter le Benchmark<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card">
+                    <h3>Recherche utilisateurs</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Recherche%20utilisateurs.pdf#view=Fit" target="_blank" rel="noopener">Consulter la Recherche utilisateurs<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card">
+                    <h3>Analyse de données</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Analyse%20de%20donn%C3%A9es.pdf#view=Fit" target="_blank" rel="noopener">Consulter l’Analyse de données<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card">
+                    <h3>Personas</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Personas.pdf#view=Fit" target="_blank" rel="noopener">Consulter les Personas<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card">
+                    <h3>Identité visuelle</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Identit%C3%A9%20visuelle.pdf#view=Fit" target="_blank" rel="noopener">Consulter l’Identité visuelle<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card">
+                    <h3>Parcours de commande</h3>
+                    <a class="button" href="Documents/McDonald%27s%20Parcours%20de%20commande.pdf#view=Fit" target="_blank" rel="noopener">Consulter le Parcours de commande<span aria-hidden="true">↗</span></a>
+                </article>
+            </div>
+        </section>
+        <section class="panel" id="questionnaire" role="tabpanel" aria-labelledby="tab-questionnaire" hidden>
+            <h2>Questionnaire</h2>
+            <div class="grid">
+                <article class="card large">
+                    <h3>Questionnaire</h3>
+                    <a class="button primary" href="https://forms.gle/egnmw98nEGULxRc87" target="_blank" rel="noopener">Ouvrir le questionnaire<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card large">
+                    <h3>Google Sheets</h3>
+                    <a class="button" href="https://docs.google.com/spreadsheets/d/1kmx0UwhW3CgKmRx8cLSbPqJS9awvKjGMAvgKTr3oOf0/edit" target="_blank" rel="noopener">Consulter les réponses<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card large">
+                    <h3>Excel</h3>
+                    <a class="button" href="Questionnaire/R%C3%A9ponse%20au%20questionnaire.xlsx" download="Réponse au questionnaire.xlsx">Ouvrir le fichier Excel<span aria-hidden="true">↓</span></a>
+                </article>
+            </div>
+        </section>
+        <section class="panel" id="wireframes" role="tabpanel" aria-labelledby="tab-wireframes" hidden>
+            <h2>Wireframes</h2>
+            <article class="card large wide">
+                <h3>Les écrans de la borne</h3>
+                <a class="button primary" href="Wireframes/Wireframes.pdf#view=Fit" target="_blank" rel="noopener">Consulter les wireframes<span aria-hidden="true">↗</span></a>
+            </article>
+        </section>
+        <section class="panel" id="maquette" role="tabpanel" aria-labelledby="tab-maquette" hidden>
+            <h2>Maquette</h2>
+            <article class="card large wide">
+                <h3>La borne en images</h3>
+                <a class="button primary" href="Maquette/Maquette.pdf#view=Fit" target="_blank" rel="noopener">Consulter la maquette<span aria-hidden="true">↗</span></a>
+            </article>
+        </section>
+        <section class="panel" id="borne" role="tabpanel" aria-labelledby="tab-borne" hidden>
+            <h2>Borne de commande</h2>
+            <div class="featured">
+                <h3>Accès à la borne</h3>
+                <a class="button primary" href="https://www.figma.com/design/x2ulMApZOHFa9lC9nsMjse" target="_blank" rel="noopener">Ouvrir la borne<span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="grid">
+                <article class="card large">
+                    <h3>Thomas</h3>
+                    <a class="button" href="https://www.figma.com/proto/x2ulMApZOHFa9lC9nsMjse?node-id=3-213&amp;starting-point-node-id=3%3A213&amp;scaling=scale-down" target="_blank" rel="noopener">Ouvrir le parcours<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card large">
+                    <h3>Marie</h3>
+                    <a class="button" href="https://www.figma.com/proto/x2ulMApZOHFa9lC9nsMjse?node-id=3-521&amp;starting-point-node-id=3%3A521&amp;scaling=scale-down" target="_blank" rel="noopener">Ouvrir le parcours<span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="card large">
+                    <h3>Lucas</h3>
+                    <a class="button" href="https://www.figma.com/proto/x2ulMApZOHFa9lC9nsMjse?node-id=3-265&amp;starting-point-node-id=3%3A265&amp;scaling=scale-down" target="_blank" rel="noopener">Ouvrir le parcours<span aria-hidden="true">↗</span></a>
+                </article>
+            </div>
+            <a class="button pdf-access" href="Borne%20de%20commande/Borne%20de%20commande.pdf#view=Fit" target="_blank" rel="noopener">Consulter les parcours en PDF<span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <span>McDonald's</span>
+            <a href="Source.pdf#view=Fit" target="_blank" rel="noopener">Source</a>
+        </div>
+    </footer>
+    <script>
+        (function () {
+            const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+
+            function showSection(sectionId, shouldFocus) {
+                const isKnownSection = tabs.some(function (tab) {
+                    return tab.getAttribute('aria-controls') === sectionId;
+                });
+
+                if (!isKnownSection) {
+                    sectionId = 'documents';
+                }
+
+                tabs.forEach(function (tab) {
+                    const isActive = tab.getAttribute('aria-controls') === sectionId;
+                    const section = document.getElementById(tab.getAttribute('aria-controls'));
+
+                    tab.setAttribute('aria-selected', String(isActive));
+                    tab.tabIndex = isActive ? 0 : -1;
+                    section.hidden = !isActive;
+
+                    if (isActive && shouldFocus) {
+                        tab.focus();
+                    }
+                });
+            }
+
+            tabs.forEach(function (tab, tabIndex) {
+                tab.addEventListener('click', function (event) {
+                    const sectionId = tab.getAttribute('aria-controls');
+
+                    event.preventDefault();
+                    history.replaceState(null, '', '#' + sectionId);
+                    showSection(sectionId, false);
+                });
+
+                tab.addEventListener('keydown', function (event) {
+                    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                        const direction = event.key === 'ArrowRight' ? 1 : -1;
+                        const nextIndex = (tabIndex + direction + tabs.length) % tabs.length;
+
+                        event.preventDefault();
+                        tabs[nextIndex].click();
+                        tabs[nextIndex].focus();
+                    }
+                });
+            });
+
+            window.addEventListener('hashchange', function () {
+                showSection(location.hash.slice(1), false);
+            });
+
+            showSection(location.hash.slice(1), false);
+        })();
+    </script>
+</body>
+</html>

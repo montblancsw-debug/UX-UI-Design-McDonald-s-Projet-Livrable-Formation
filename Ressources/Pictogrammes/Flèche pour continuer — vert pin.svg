@@ -1,0 +1,11 @@
+<!-- Pictogrammes : Font Awesome Free 6 Solid, Fonticons Inc., CC BY 4.0, https://fontawesome.com/license/free ; tailles et couleurs adaptées dans les maquettes. Typographie : Noto Sans, The Noto Project Authors, SIL OFL 1.1. -->
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2001_3617)">
+<path d="M40.7656 25.7656C41.7422 24.7891 41.7422 23.2031 40.7656 22.2266L28.2656 9.72656C27.2891 8.75 25.7031 8.75 24.7266 9.72656C23.75 10.7031 23.75 12.2891 24.7266 13.2656L32.9688 21.5H9C7.61719 21.5 6.5 22.6172 6.5 24C6.5 25.3828 7.61719 26.5 9 26.5H32.9609L24.7344 34.7344C23.7578 35.7109 23.7578 37.2969 24.7344 38.2734C25.7109 39.25 27.2969 39.25 28.2734 38.2734L40.7734 25.7734L40.7656 25.7656Z" fill="#234B36"/>
+</g>
+<defs>
+<clipPath id="clip0_2001_3617">
+<rect width="35" height="40" fill="white" transform="translate(6.5 4)"/>
+</clipPath>
+</defs>
+</svg>
